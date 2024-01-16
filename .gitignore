@@ -1,0 +1,6 @@
+# NPM and typescript files
+node_modules
+dist
+
+# Env variables
+.env
