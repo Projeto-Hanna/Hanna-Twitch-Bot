@@ -5,7 +5,6 @@
   "type": "module",
   "main": "./dist/index.js",
   "scripts": {
-    "postinstall": "tsc",
     "build": "tsc --build",
     "dev": "nodemon --exec \"node --loader=ts-node/esm\" src/index.ts",
     "start": "node --loader=ts-node/esm --no-warnings ./dist/index.js",
