@@ -2,5 +2,8 @@
 node_modules
 dist
 
+# Test folders
+coverage
+
 # Env variables
 .env
