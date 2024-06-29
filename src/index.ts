@@ -4,7 +4,7 @@ import { RefreshingAuthProvider } from '@twurple/auth';
 import { Bot } from '@twurple/easy-bot';
 import { promises as fs } from 'fs';
 
-import commands from './commands';
+import commands from './commands/index.js';
 
 const twitchChannel = String(process.env.TWITCH_CHANNEL);
 const clientId = String(process.env.TWITCH_CLIENT_ID);

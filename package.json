@@ -1,18 +1,18 @@
 {
   "name": "hanna-twitch-bot",
   "version": "1.0.0",
-  "description": "Hanna Twitch Bot",
   "type": "module",
+  "description": "Hanna Twitch Bot",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc --build",
-    "dev": "nodemon --exec \"node --loader=ts-node/esm\" src/index.ts",
-    "start": "node --loader=ts-node/esm --no-warnings ./dist/index.js",
+    "dev": "nodemon -e ts,js --exec ts-node src/index.ts",
+    "start": "node --no-warnings ./dist/index.js",
     "pm2": "pm2 start npm -- run start",
     "lint": "eslint src --ext .ts",
     "test": "jest --verbose ./tests"
   },
-  "author": "",
+  "author": "Projeto Hanna",
   "license": "ISC",
   "dependencies": {
     "@twurple/auth": "^7.1.0",

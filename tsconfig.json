@@ -1,21 +1,29 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "lib": ["esnext"],
+    /* Language and Environment */
     "target": "ESNext",
-    "module": "ESNext",
-    "rootDir": "./src",
-    "moduleResolution": "node",
+
+    /* Modules */
+    "module": "NodeNext",
     "baseUrl": "./src",
+    "rootDir": "./src",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
+  
+    /* Emit */
     "outDir": "./dist",
-    "removeComments": true, 
+    "removeComments": true,
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
     "strict": true,
-    "alwaysStrict": true, 
-    "skipLibCheck": true,
-    "sourceMap": true
+    "alwaysStrict": true,
+
+    /* Completeness */
+    "skipLibCheck": true
   },
   "ts-node": {
     "files": true,
