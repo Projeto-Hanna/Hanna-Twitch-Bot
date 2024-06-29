@@ -7,7 +7,7 @@ coverage
 
 # Env variables
 .env
-twitch-auth-tokens
+twitch-auth-tokens.json
 
 # NPM
 package-lock.json
