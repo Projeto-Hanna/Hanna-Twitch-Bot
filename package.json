@@ -1,7 +1,7 @@
 {
   "name": "hanna-twitch-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hanna Twitch Bot",
   "type": "module",
   "main": "./dist/index.js",
   "scripts": {
