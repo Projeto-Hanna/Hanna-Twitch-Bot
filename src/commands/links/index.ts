@@ -1,4 +1,4 @@
-import discord from './discord';
+import discord from './discord.js';
 
 export default [
   discord,
