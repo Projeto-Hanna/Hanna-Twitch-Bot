@@ -14,7 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "alwaysStrict": true, 
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "sourceMap": true
   },
   "ts-node": {
     "files": true,
