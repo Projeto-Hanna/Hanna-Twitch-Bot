@@ -1,5 +1,5 @@
 import discord from './discord';
 
-export default {
+export default [
   discord,
-};
+];

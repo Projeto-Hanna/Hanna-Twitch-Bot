@@ -1,44 +1,47 @@
 import 'dotenv/config';
 
-import tmi from 'tmi.js';
+import { RefreshingAuthProvider } from '@twurple/auth';
+import { Bot } from '@twurple/easy-bot';
+import { promises as fs } from 'fs';
 
-import { messageStartsWithPrefix, parseCommand } from './utils/commands';
+import commands from './commands';
 
-const client = new tmi.Client({
-  options: { debug: true },
-  connection: {
-    secure: true,
-    reconnect: true
-  },
-  identity: {
-    username: process.env.TWITCH_USERNAME,
-    password: process.env.TWITCH_OAUTH_TOKEN
-  },
-  channels: [
-    String(process.env.TWITCH_CHANNEL),
-  ]
+const twitchChannel = String(process.env.TWITCH_CHANNEL);
+const clientId = String(process.env.TWITCH_CLIENT_ID);
+const clientSecret = String(process.env.TWITCH_CLIENT_SECRET);
+const authProvider = new RefreshingAuthProvider({ clientId, clientSecret });
+
+const tokenData = JSON.parse(await fs.readFile(`./twitch-auth-tokens.json`, 'utf-8'));
+await authProvider.addUserForToken(tokenData, ['chat']);
+
+authProvider.onRefresh(
+  async (_userId, newTokenData) => await fs.writeFile(`./twitch-auth-tokens.json`, JSON.stringify(newTokenData, null, 4), 'utf-8'),
+);
+
+const bot = new Bot({
+	authProvider,
+	channels: [twitchChannel],
+  prefix: process.env.PREFIX,
+	commands: [...commands]
 });
 
-client.connect();
+bot.onAuthenticationSuccess(() => {
+  console.log('Bot online');
+  bot.say(twitchChannel, 'Olá mundo!!');
+});
 
-client.on('message', async (channel, tags, message, self) => {
-  if(self || !messageStartsWithPrefix(message)) {
-    return;
-  }
+bot.onAuthenticationFailure(() => {
+  console.log('Falha na autenticação');
+});
 
-  const command = parseCommand(message);
+bot.onSub(({ broadcasterName, userName }) => {
+	bot.say(broadcasterName, `Obrigada @${userName} pelo sub!!`);
+});
 
-  if (!command) {
-    return;
-  }
+bot.onResub(({ broadcasterName, userName, months }) => {
+	bot.say(broadcasterName, `Obrigada @${userName} por ${months} mês/meses de sub!!`);
+});
 
-  try {
-    command.execute(client, {
-      tags,
-      channel,
-      message,
-    });
-  } catch (error) {
-    console.error(error);
-  }
+bot.onSubGift(({ broadcasterName, gifterName, userName }) => {
+	bot.say(broadcasterName, `Obrigada @${gifterName} por dar um sub para @${userName}!!`);
 });

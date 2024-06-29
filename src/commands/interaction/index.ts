@@ -1,5 +1,5 @@
 import hello from './hello';
 
-export default {
+export default [
   hello,
-};
+];
