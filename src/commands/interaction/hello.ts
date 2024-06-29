@@ -1,14 +1,5 @@
-import { Client } from 'tmi.js';
+import { createBotCommand } from '@twurple/easy-bot';
 
-import { Command, TwitchArgs } from '../../types';
-
-const execute = (client: Client, args: TwitchArgs) => {
-	client.say(args.channel, `@${args.tags.username} olá!!`);
-  return true;
-};
-
-export default {
-	name: 'hello',
-	localizedNames: ['oi', 'olá'],
-	execute,
-} as Command;
+export default createBotCommand('oi', (params, { userName, say }) => {
+	say(`@${userName} olá!!`);
+});

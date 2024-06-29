@@ -1,13 +1,5 @@
-import { Client } from 'tmi.js';
+import { createBotCommand } from '@twurple/easy-bot';
 
-import { Command, TwitchArgs } from '../../types';
-
-const execute = (client: Client, args: TwitchArgs) => {
-	client.say(args.channel, `Entrem no nosso servidor do Discord: ${process.env.DISCORD_LINK}`);
-  return true;
-};
-
-export default {
-	name: 'discord',
-	execute,
-} as Command;
+export default createBotCommand('discord', (params, { userName, say }) => {
+	say(`@${userName} entra lá no nosso servidor do Discord: ${process.env.DISCORD_LINK}`);
+});
