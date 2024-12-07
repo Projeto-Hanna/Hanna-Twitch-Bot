@@ -36,6 +36,9 @@ TWITCH_CLIENT_SECRET=''
 
 # Link do servidor do Discord a divulgar
 DISCORD_LINK=''
+
+# Link do perffil do Instagram a divulgar
+INSTAGRAM_LINK=''
 ```
 
 ### Autenticação inicial na Twitch

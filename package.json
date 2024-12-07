@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Hanna Twitch Bot",
   "main": "./dist/index.js",
+  "private": true,
   "scripts": {
     "build": "tsc --build",
     "dev": "nodemon -e ts,js --exec ts-node src/index.ts",
