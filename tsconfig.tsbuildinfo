@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/commands/index.ts","./src/commands/interaction/hello.ts","./src/commands/interaction/index.ts","./src/commands/links/discord.ts","./src/commands/links/index.ts","./src/commands/links/instagram.ts","./src/constants/index.ts"],"version":"6.0.2"}

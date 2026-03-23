@@ -5,11 +5,10 @@
 
     /* Modules */
     "module": "NodeNext",
-    "baseUrl": "./src",
     "rootDir": "./src",
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
-  
+
     /* Emit */
     "outDir": "./dist",
     "removeComments": true,
