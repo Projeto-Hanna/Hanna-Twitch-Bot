@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": "tsc --build",
-    "dev": "nodemon -e ts,js --exec ts-node src/index.ts",
+    "dev": "tsx watch src/index.ts",
     "start": "node --no-warnings ./dist/index.js",
     "pm2": "pm2 start npm -- run start",
     "lint": "eslint src --ext .ts",
@@ -22,10 +22,11 @@
     "@twurple/easy-bot": "^8.0",
     "dotenv": "^17.3",
     "globals": "^17.4.0",
-    "typescript": "^6.0"
+    "typescript": "^6.0.2"
   },
   "devDependencies": {
     "@types/jest": "^30.0",
+    "@types/node": "^25.5.0",
     "@typescript-eslint/eslint-plugin": "^8.17",
     "@typescript-eslint/parser": "^8.17",
     "eslint": "^10.1",
@@ -35,9 +36,9 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.2",
     "jest": "^30.3",
-    "nodemon": "^3.1",
     "prettier": "^3.4",
     "ts-jest": "^29.2",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0"
   }
 }
