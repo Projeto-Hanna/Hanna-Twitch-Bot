@@ -16,15 +16,14 @@
   "author": "Projeto Hanna",
   "license": "ISC",
   "dependencies": {
-    "@eslint/eslintrc": "^3.3.5",
-    "@eslint/js": "^10.0.1",
     "@twurple/auth": "^8.0",
     "@twurple/easy-bot": "^8.0",
     "dotenv": "^17.3",
-    "globals": "^17.4.0",
-    "typescript": "^6.0.2"
+    "globals": "^17.4.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^10.0.1",
     "@types/jest": "^30.0",
     "@types/node": "^25.5.0",
     "@typescript-eslint/eslint-plugin": "^8.17",
@@ -39,6 +38,7 @@
     "prettier": "^3.4",
     "ts-jest": "^29.2",
     "ts-node": "^10.9.2",
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
   }
 }

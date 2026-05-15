@@ -28,7 +28,7 @@ const bot = new Bot({
   authProvider,
   channels: [twitchChannel],
   prefix: process.env.PREFIX,
-  commands: [...commands],
+  commands,
 });
 
 bot.onAuthenticationSuccess(() => {
