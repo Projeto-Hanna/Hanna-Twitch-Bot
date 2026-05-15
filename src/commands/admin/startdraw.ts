@@ -4,8 +4,8 @@ import { checkOwnerPermission } from '../../middlewares/index.js';
 
 export default createBotCommand(
   'sortear',
-  (params, { userName, say, reply }) => {
-    if (!checkOwnerPermission(userName)) {
+  (params, { userId, say, reply }) => {
+    if (!checkOwnerPermission(userId)) {
       return;
     }
 
