@@ -22,7 +22,9 @@
     "alwaysStrict": true,
 
     /* Completeness */
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    "types": ["node", "jest"]
   },
   "ts-node": {
     "files": true,

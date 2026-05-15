@@ -1,14 +1,14 @@
 import { createBotCommand } from '@twurple/easy-bot';
 
 export default createBotCommand(
-  'instagram',
+  'links',
   (params, { reply }) => {
     reply(
-      `Veja nossos posts, reels e stories em: ${process.env.INSTAGRAM_LINK}`,
+      `Visite os links do Projeto Hanna agora mesmo 👉👉 https://linktr.ee/Projeto_Hanna`,
     );
   },
   {
-    aliases: ['insta'],
+    aliases: ['redes', 'linktree'],
     ignoreCase: true,
   },
 );
